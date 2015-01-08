@@ -1,0 +1,196 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Open Sans', sans-serif;
+}
+
+#mainHeader {
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: block;
+    height: 80px;
+    width: 100%;
+    background: #3B3B3B;
+    text-align: center;
+}
+
+#mainHeader span {
+    color: #fff;
+    line-height: 80px;
+    font-size: 20px;
+    font-weight: 700;
+}
+
+body {
+    height: 100%;
+    display: block;
+    background: rgb(233, 234, 237);
+}
+
+#content {
+    position: relative;
+    width: 960px;
+    margin: 100px auto 0 auto;
+}
+
+#leftAside {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 220px;
+}
+
+#rightAside {
+    position: absolute;
+    right: 0;
+    top: 0;
+    width: 220px;
+}
+
+.panel {
+    padding: 10px;
+    box-shadow: 0 1px 5px #dbdee6;
+    width: 100%;
+    margin: 0 0 20px 0;
+    border-radius: 2px;
+    background: #fff;
+    overflow: auto;
+}
+
+.panelTitle {
+    text-align: center;
+    background: #7e89ad;
+    border-radius: 2px;
+    margin: 0 0 10px 0;
+    color: #ffffff;
+    text-shadow: 1px 1px 1px #555;
+    line-height: 30px;
+}
+
+#mainNav ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+#mainNav ul li a{
+    height: 28px;
+    line-height: 28px;
+    display: block;
+    border-bottom: 1px solid #eaecf1;
+    color: #3B3B3B;
+    text-decoration: none;
+    padding: 0 0 0 5px;
+    font-size: 14px;
+}
+#mainNav ul li:last-child a{
+    border: none;
+}
+
+#mainNav ul li a:hover {
+    background: #eaecf1;
+    opacity: 0.8;
+}
+
+.panel p {
+    font-size: 14px;
+    margin: 10px 0;
+}
+
+.button {
+    background: #727ea4;
+    border: 1px solid #58648b;
+    padding: 5px 10px;
+    color: #ffffff;
+    border-radius: 2px;
+    -webkit-transition: all 0.2s;
+    -moz-transition: all 0.2s;
+    -ms-transition: all 0.2s;
+    -o-transition: all 0.2s;
+    transition: all 0.2s;
+}
+
+.button:hover {
+    opacity: 0.8;
+    cursor: pointer;
+}
+
+#mainContent {
+    margin-left: 250px;
+    width: 460px;
+}
+.panel aside {
+    float: left;
+    width: 150px;
+}
+.panel .imageHolder {
+    padding: 5px;
+    border: 1px solid #ddd;
+    display: inline-block;
+    border-radius: 2px;
+    font-size: 12px;
+}
+
+.panel .imageHolder img{
+    width: 140px;
+    border-radius: 2px;
+    margin: 0;
+    padding: 0;
+    display: block;
+}
+
+.ad article {
+    margin: 0 0 0 160px;
+    font-size: 14px;
+    display: block;
+}
+
+.sellerInfo {
+    margin: 10px 0;
+}
+
+.siLf {
+    font-size: 15px;
+    color: #4e65b0;
+    line-height: 24px;
+    width: 60px;
+    display: inline-block;
+    text-transform: uppercase;
+}
+
+.siRg {
+    line-height: 24px;
+    font-size: 15px;
+    color: #444;
+}
+
+.status {
+    font-size: 12px;
+    color: #7e89ad;
+    text-align: center;
+}
+
+.adMenuFooter {
+    margin: 10px 0 0 0;
+    padding: 10px 0 0 0;
+    border-top: 1px solid #ccc;
+    text-align: right;
+}
+
+
+
+
+
+
+
+
+
+
+#mainFooter {
+    height: 50px;
+    width: 100%;
+    background: #efefef;
+    border-top: 1px solid #ccc;
+}

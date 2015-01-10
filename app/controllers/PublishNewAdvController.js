@@ -13,7 +13,6 @@ app.controller('PublishNewAdvController', ['$scope', 'adsData', 'userData', 'cat
         $scope.username = 'guest';
     }
     $scope.publishNewAdv = function (data) {
-        console.log(data);
         adsData.addNewAdv(data);
     }
 }]);

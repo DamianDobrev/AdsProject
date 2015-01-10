@@ -2,10 +2,6 @@ app.factory('adsData', ['$resource', 'baseServiceUrl', 'userData', '$location', 
     var resourceAllAds = $resource(baseServiceUrl + 'ads');
     var resourceUserAds;
 
-    function getCurrentAdv() {
-        return currentAdv;
-    }
-
     function getAllAds() {
         return resourceAllAds.get();
     }
@@ -30,20 +26,33 @@ app.factory('adsData', ['$resource', 'baseServiceUrl', 'userData', '$location', 
 
     function addNewAdv(data) {
         setResource();
-        resourceUserAds.post(data);
+        resourceUserAds.post(data)
+            .$promise
+            .then(function (dat) {
+                Dom.createNoty('success', dat.message);
+                $location.path('/myAdvs');
+            },
+            function (error) {
+                Dom.createNoty('error', error.message)
+            });
     }
 
-    function editAdv(ad) {
-        var resource = $resource(baseServiceUrl + 'user/ads/' + id, {}, {
+    function editAdv(ad, data) {
+        var resource = $resource(baseServiceUrl + 'user/ads/' + ad.id, {}, {
             editAdv: {
                 method : 'PUT',
                 headers: userData.getHeaders()
             }
         });
-        resource.editAdv()
+        resource.editAdv(data)
             .$promise
-            .then(function () {
-                Dom.createNoty('success', 'Ad edited successfully')
+            .then(function (success) {
+                Dom.createNoty('success', success.message);
+                $location.path('/myAdvs');
+            },
+            function (error) {
+                console.log(error)
+                Dom.createNoty('error', error.data.message);
             });
     }
 
@@ -77,7 +86,6 @@ app.factory('adsData', ['$resource', 'baseServiceUrl', 'userData', '$location', 
         addNewAdv : addNewAdv,
         deleteAdv : deleteAdv,
         editAdv : editAdv,
-        getCurrentAdv : getCurrentAdv,
         getAdById : getAdById
     }
 }]);

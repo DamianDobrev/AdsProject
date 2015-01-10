@@ -17,7 +17,6 @@ app.controller('MyAdvController', ['$scope', 'adsData', 'userData', '$location',
         $location.path('/editAdv/' + ad.id);
     };
 
-
     $scope.isAuthenticated = (function () {
         return !!sessionStorage.access_token;
     })();
@@ -27,5 +26,4 @@ app.controller('MyAdvController', ['$scope', 'adsData', 'userData', '$location',
     else {
         $scope.username = 'guest';
     }
-
 }]);

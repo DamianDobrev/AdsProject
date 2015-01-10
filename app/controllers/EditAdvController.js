@@ -1,4 +1,4 @@
-app.controller('EditAdvController', ['$scope', 'adsData', 'userData', '$location', '$routeParams', function($scope, adsData, userData, $location, $routeParams){
+app.controller('EditAdvController', ['$scope', 'adsData', 'userData', '$location', '$routeParams', 'categoriesData', 'townsData', function($scope, adsData, userData, $location, $routeParams, categoriesData, townsData){
     $scope.pageTitle = 'Edit Ad';
     $scope.isAuthenticated = (function () {
         return !!sessionStorage.access_token;
@@ -12,15 +12,18 @@ app.controller('EditAdvController', ['$scope', 'adsData', 'userData', '$location
             console.log('error')
         });
 
+    $scope.adv = {};
+    $scope.categories = categoriesData.getCategories();
+    $scope.towns = townsData.getTowns();
 
     if ($scope.isAuthenticated) {
         $scope.username = JSON.parse(sessionStorage.access_token).username;
     }
-//    $scope.editAdvert = function () {
-//
-//    }
     else {
         $scope.username = 'guest';
+    }
+    $scope.editAdv = function (data) {
+        adsData.editAdv($scope.ad, data);
     }
 
 }]);

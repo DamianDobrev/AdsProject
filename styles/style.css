@@ -13,14 +13,29 @@
     height: 80px;
     width: 100%;
     background: #3B3B3B;
-    text-align: center;
 }
 
-#mainHeader span {
+#mainHeader > div {
+    width: 960px;
+    margin: 0 auto;
+}
+
+#mainHeader span:first-child {
     color: #fff;
     line-height: 80px;
     font-size: 20px;
     font-weight: 700;
+}
+#mainHeader span:nth-child(2) {
+    color: #ccc;
+    line-height: 80px;
+    font-size: 15px;
+    font-weight: 400;
+    float: right;
+}
+
+#mainHeader a {
+    color: #eeeeee;
 }
 
 body {

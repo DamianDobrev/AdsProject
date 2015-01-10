@@ -4,7 +4,7 @@ app.factory('userData', ['$resource', 'baseServiceUrl', '$location', function ($
             .save(user)
             .$promise
             .then(function (data) {
-                sessionStorage['access_token'] = JSON.stringify(data);
+                sessionStorage['access_token'] = JSON.stringify(data.access_token);
                 $location.path('/');
                 Dom.createNoty('success', 'Congrats, you created a new user!')
             }, function (error) {

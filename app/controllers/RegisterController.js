@@ -1,5 +1,6 @@
 app.controller('RegisterController', ['$scope', 'townsData', 'userData', function($scope, townsData, userData){
     $scope.pageTitle = 'Register';
+    $scope.username = JSON.parse(sessionStorage.access_token).username;
     townsData.getTowns()
         .$promise
         .then(function (data) {
@@ -9,7 +10,6 @@ app.controller('RegisterController', ['$scope', 'townsData', 'userData', functio
         userData.register(user);
     };
     $scope.isAuthenticated = (function () {
-        console.log(!!sessionStorage.access_token)
         return !!sessionStorage.access_token;
     })();
 }]);

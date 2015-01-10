@@ -1,4 +1,5 @@
 <div id="leftAside" class="aside">
-    <public-nav> </public-nav>
-    <public-publish-ads></public-publish-ads>
+    <public-nav ng-hide="isAuthenticated"></public-nav>
+    <private-nav ng-show="isAuthenticated"></private-nav>
+    <public-publish-ads ng-hide="isAuthenticated"></public-publish-ads>
 </div>

@@ -33,6 +33,7 @@ body {
     position: relative;
     width: 960px;
     margin: 100px auto 0 auto;
+    min-height: 670px;
 }
 
 #leftAside {
@@ -121,9 +122,17 @@ body {
 
 #mainContent {
     margin-left: 250px;
-    width: 460px;
     display: block;
 }
+
+.withRSContainer {
+    width: 460px;
+}
+
+.withoutRSContainer {
+    width: auto;
+}
+
 .panel aside {
     float: left;
     width: 150px;
@@ -155,7 +164,7 @@ body {
 }
 
 .siLf {
-    font-size: 15px;
+    font-size: 13px;
     color: #4e65b0;
     line-height: 24px;
     width: 60px;
@@ -165,8 +174,9 @@ body {
 
 .siRg {
     line-height: 24px;
-    font-size: 15px;
+    font-size: 13px;
     color: #444;
+    word-break: break-all;
 }
 
 .status {
@@ -182,13 +192,51 @@ body {
     text-align: right;
 }
 
+.longTtl {
+    width: auto !important;
+}
 
+.blockElement {
+    display: block;
+    width: 100%;
+}
 
+.lmBott {
+    margin: 0 0 5px 0;
+}
 
+.textInput {
+    width: 170px;
+    height: 30px;
+    border-radius: 3px;
+    padding: 0 0 0 10px;
+    line-height: 30px;
+    font-size: 14px;
+    border: 1px solid #a7b3c9;
+    box-shadow: 0 0 2px #c6c9dd;
+    margin: 0 10px 0 0;
+}
 
+.lightText, .lightText a {
+    color: #727ea4;
+    font-size: 14px;
+}
 
+.hover {
+    -webkit-transition: all 0.2s;
+    -moz-transition: all 0.2s;
+    -ms-transition: all 0.2s;
+    -o-transition: all 0.2s;
+    transition: all 0.2s;
+}
 
+.hover:hover {
+    opacity: 0.8;
+}
 
+.submitMargin {
+    margin-top: 15px;
+}
 
 
 #mainFooter {
@@ -196,4 +244,20 @@ body {
     width: 100%;
     background: #efefef;
     border-top: 1px solid #ccc;
+}
+
+.dispno {
+    display: none;
+}
+
+.adTitle {
+    text-align: left;
+    padding: 0 0 0 10px;
+}
+
+.dateInTitle {
+    float: right;
+    margin: 0 10px 0 0;
+    font-size: 12px;
+    font-weight: 400;
 }

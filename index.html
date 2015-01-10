@@ -8,15 +8,29 @@
 </head>
 <body>
 
+
+
 <ng-view></ng-view>
 
 
 
+<footer id="mainFooter">
+    sadsadsadsa
+</footer>
+
 <script src="jquery/jquery-1.11.2.min.js"></script>
-<script src="angular/angular.min.js"></script>
-<script src="angular/angular-route.min.js"></script>
+<script src="noty/packaged/jquery.noty.packaged.js"></script>
+<script src="app/scripts.js"></script>
+<script src="https://code.angularjs.org/1.3.8/angular.js"></script>
+<script src="https://code.angularjs.org/1.3.8/angular-route.js"></script>
+<script src="https://code.angularjs.org/1.3.8/angular-resource.js"></script>
 <script src="app/app.js"></script>
 <script src="app/controllers/HomeController.js"></script>
+<script src="app/controllers/LoginController.js"></script>
+<script src="app/controllers/RegisterController.js"></script>
+<script src="app/services/data/townsData.js"></script>
+<script src="app/services/data/userData.js"></script>
+<script src="app/services/data/adsData.js"></script>
 <script src="app/directives/left-sidebar.js"></script>
 <script src="app/directives/public-nav.js"></script>
 <script src="app/directives/public-publish-ads.js"></script>
@@ -24,5 +38,9 @@
 <script src="app/directives/public-categories.js"></script>
 <script src="app/directives/public-towns.js"></script>
 <script src="app/directives/public-advs.js"></script>
+<script src="app/directives/login-bar.js"></script>
+<script src="app/directives/register-bar.js"></script>
+<script src="app/directives/private-nav.js"></script>
+<script src="app/services/authentication.js"></script>
 </body>
 </html>

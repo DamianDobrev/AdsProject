@@ -18,6 +18,21 @@ app.config(['$routeProvider', function ($routeProvider) {
         controller: 'RegisterController',
         replace: true
     });
+    $routeProvider.when('/myAdvs', {
+        templateUrl: 'templates/my-advs.html',
+        controller: 'MyAdvController',
+        replace: true
+    });
+    $routeProvider.when('/publishNewAdv', {
+        templateUrl: 'templates/publish-new-adv.html',
+        controller: 'PublishNewAdvController',
+        replace: true
+    });
+    $routeProvider.when('/editProfile', {
+        templateUrl: 'templates/edit-profile.html',
+        controller: 'EditProfileController',
+        replace: true
+    });
     $routeProvider.otherwise({
         redirectTo: '/',
         replace: true

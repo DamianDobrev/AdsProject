@@ -1,8 +1,9 @@
 <header id="mainHeader">
     <div>
         <span>Ads - {{pageTitle}}</span>
-        <span>Welcome, {{username}} <a href="#" >[logout]</a></span>
-
+        <span ng-controller="LogoutController">Welcome, {{username}}
+            <button class="button" ng-click="logout()" ng-show="isAuthenticated">[logout]</button>
+        </span>
     </div>
 </header>
 <div id="content">

@@ -172,6 +172,7 @@ body {
     margin: 0 0 0 160px;
     font-size: 14px;
     display: block;
+    word-break: break-all;
 }
 
 .sellerInfo {
@@ -183,6 +184,15 @@ body {
     color: #4e65b0;
     line-height: 24px;
     width: 60px;
+    display: inline-block;
+    text-transform: uppercase;
+}
+
+.siLf2 {
+    font-size: 13px;
+    color: #4e65b0;
+    line-height: 24px;
+    width: 80px;
     display: inline-block;
     text-transform: uppercase;
 }
@@ -203,7 +213,7 @@ body {
 .adMenuFooter {
     margin: 10px 0 0 0;
     padding: 10px 0 0 0;
-    border-top: 1px solid #ccc;
+    /*border-top: 1px solid #ccc;*/
     text-align: right;
 }
 

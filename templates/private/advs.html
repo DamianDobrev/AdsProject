@@ -1,0 +1,25 @@
+<div id="mainContent" class="withoutRSContainer">
+    <section class="panel ad" ng-repeat="ad in ads.ads">
+        <h3 class="panelTitle adTitle"><span ng-bind="ad.title"></span><span class="dateInTitle">{{ ad.date | date}}</span></h3>
+        <aside>
+            <div class="imageHolder">
+                <img ng-src="{{ad.imageDataUrl}}" />
+            </div>
+            <!--<div class="status">Status: Awaiting approval</div>-->
+        </aside>
+        <article>
+            <span ng-bind="ad.text"></span>
+            <section class="sellerInfo">
+                <span class="siLf2">Category: </span> <span class="siRg" ng-bind="ad.categoryName"></span>
+                <br>
+                <span class="siLf2">Town: </span> <span class="siRg" ng-bind="ad.townName"></span>
+            </section>
+        </article>
+        <footer class="adMenuFooter">
+            <!--<button class="button">Approve</button>-->
+            <!--<button class="button">Reject</button>-->
+            <button class="button">Edit</button>
+            <button class="button" ng-click="delete(ad)">Delete</button>
+        </footer>
+    </section>
+</div>

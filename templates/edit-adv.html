@@ -5,7 +5,7 @@
     <left-public-sidebar></left-public-sidebar>
 
     <div id="mainContent" class="withoutRSContainer">
-        <section class="panel ad" ng-repeat="ad in ads.ads">
+        <section class="panel ad">
             <h3 class="panelTitle adTitle"><span ng-bind="ad.title"></span><span class="dateInTitle">{{ ad.date | date}}</span></h3>
             <aside>
                 <div class="imageHolder">
@@ -22,9 +22,12 @@
                 </section>
             </article>
             <footer class="adMenuFooter">
+                <!--<button class="button">Approve</button>-->
+                <!--<button class="button">Reject</button>-->
                 <button class="button" ng-click="editAdv(ad)">Edit</button>
                 <button class="button" ng-click="deleteAdv(ad)">Delete</button>
             </footer>
         </section>
     </div>
+
 </div>

@@ -1,15 +1,43 @@
-<header id="mainHeader">
-    <div>
-        <span>Ads - {{pageTitle}}</span>
-        <span ng-controller="LogoutController">Welcome, {{username}}
-            <button class="button" ng-click="logout()" ng-show="isAuthenticated">[logout]</button>
-        </span>
-    </div>
-</header>
-
+<header-pane></header-pane>
 <div id="content">
 
     <left-public-sidebar></left-public-sidebar>
 
-    <publish-new-adv></publish-new-adv>
+    <div id="mainContent" class="panel withoutRSContainer">
+        <h3 class="panelTitle">{{pageTitle}}</h3>
+        <p>Login to add an advertisement</p>
+
+        <div class="blockElement lmBott">
+            <input type="text" id="pbTitle" class="textInput" ng-model="adv.title">
+            <label for="pbTitle" class="siLf longTtl">Title</label>
+        </div>
+
+        <div class="blockElement lmBott">
+            <textarea id="pbText" class="textInput" ng-model="adv.text">
+            </textarea>
+            <label for="pbText" class="siLf longTtl">Text</label>
+        </div>
+
+        <div class="blockElement lmBott">
+            <input type="file" id="pbImage" class="textInput" ng-model="adv.imageDataUrl">
+            <label for="pbImage" class="siLf longTtl">Image</label>
+        </div>
+
+        <div class="blockElement lmBott">
+            <select class="textInput" id="inputCategory" ng-model="adv.categoryId" ng-options="cat.id as cat.name for cat in categories">
+            </select>
+            <label for="inputCategory" class="siLf longTtl">Category</label>
+        </div>
+
+        <div class="blockElement lmBott">
+            <select class="textInput" id="inputTown" ng-model="adv.townId" ng-options="town.id as town.name for town in towns">
+            </select>
+            <label for="inputTown" class="siLf longTtl">Town</label>
+        </div>
+
+
+        <div class="blockElement submitMargin">
+            <button class="button" ng-click="publishNewAdv(adv)">Publish</button>
+        </div>
+    </div>
 </div>

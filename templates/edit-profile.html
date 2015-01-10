@@ -1,17 +1,29 @@
-<header id="mainHeader">
-    <div>
-        <span>Ads - {{pageTitle}}</span>
-        <span ng-controller="LogoutController">Welcome, {{username}}
-            <button class="button" ng-click="logout()" ng-show="isAuthenticated">[logout]</button>
-        </span>
-    </div>
-</header>
+<header-pane></header-pane>
 
 <div id="content">
 
     <left-public-sidebar></left-public-sidebar>
 
-    <public-advs></public-advs>
+    <div id="mainContent" class="withRSContainer">
+        <section class="panel ad" ng-repeat="ad in ads.ads">
+            <h3 class="panelTitle adTitle"><span ng-bind="ad.title"></span><span class="dateInTitle">{{ ad.date | date}}</span></h3>
+            <aside>
+                <div class="imageHolder">
+                    <img ng-src="{{ad.imageDataUrl}}" />
+                </div>
+            </aside>
+            <article>
+                <span ng-bind="ad.text"></span>
+                <section class="sellerInfo">
+                    <span class="siLf">Name: </span> <span class="siRg" ng-bind="ad.ownerName">Damian Dobrev</span>
+                    <br>
+                    <span class="siLf">Email: </span> <span class="siRg" ng-bind="ad.ownerEmail">sexy@bea.st</span>
+                    <br>
+                    <span class="siLf">Tel: </span> <span class="siRg" ng-bind="ad.ownerPhone">69/420 420</span>
+                </section>
+            </article>
+        </section>
+    </div>
 
     <public-right-sidebar></public-right-sidebar>
 </div>

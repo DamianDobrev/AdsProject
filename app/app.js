@@ -28,13 +28,18 @@ app.config(['$routeProvider', function ($routeProvider) {
         controller: 'PublishNewAdvController',
         replace: true
     });
+    $routeProvider.when('/editAdv/:id', {
+        templateUrl: 'templates/edit-adv.html',
+        controller: 'EditAdvController',
+        replace: true
+    });
     $routeProvider.when('/editProfile', {
         templateUrl: 'templates/edit-profile.html',
         controller: 'EditProfileController',
         replace: true
     });
-    $routeProvider.otherwise({
-        redirectTo: '/',
-        replace: true
-    });
+//    $routeProvider.otherwise({
+//        redirectTo: '/',
+//        replace: true
+//    });
 }]);

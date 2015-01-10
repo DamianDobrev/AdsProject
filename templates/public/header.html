@@ -1,0 +1,8 @@
+<header id="mainHeader">
+    <div>
+        <span>Ads - {{pageTitle}}</span>
+        <span ng-controller="LogoutController">Welcome, {{username}}
+            <button class="button" ng-click="logout()" ng-show="isAuthenticated">[logout]</button>
+        </span>
+    </div>
+</header>

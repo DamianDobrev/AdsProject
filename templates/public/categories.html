@@ -1,13 +1,6 @@
 <div class="panel">
     <h3 class="panelTitle">Categories</h3>
-    <p>Choose category</p>
     <ul class="categories">
-        <li>Category1</li>
-        <li>Category2</li>
-        <li>Category3</li>
-        <li>Category4</li>
-        <li>Category5</li>
-        <li>Category6</li>
-        <li>Category7</li>
+        <li ng-repeat="cat in categories" ng-bind="cat.name"></li>
     </ul>
 </div>

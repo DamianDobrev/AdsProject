@@ -1,14 +1,7 @@
-app.controller('MyAdvController', ['$scope', 'adsData', 'userData', '$location', '$routeParams', function($scope, adsData, userData, $location, $routeParams){
+app.controller('MyAdvController', ['$scope', 'adsData', 'userData', '$location', 'authData', function($scope, adsData, userData, $location, authData){
     $scope.pageTitle = 'My Ads';
-    $scope.isAuthenticated = (function () {
-        return !!sessionStorage.access_token;
-    })();
-    if ($scope.isAuthenticated) {
-        $scope.username = JSON.parse(sessionStorage.access_token).username;
-    }
-    else {
-        $scope.username = 'guest';
-    }
+    $scope.isAuthenticated = authData.isLogged();
+    $scope.username = authData.getUsername();
 
     function initAds(page) {
         $scope.ads = {};

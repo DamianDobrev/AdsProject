@@ -1,6 +1,7 @@
-app.controller('HomeController', ['$scope', 'adsData', function($scope, adsData){
+app.controller('HomeController', ['$scope', 'adsData', 'authData', function($scope, adsData, authData){
     $scope.pageTitle = 'Home';
-    $scope.currentPage = 0;
+    $scope.isAuthenticated = authData.isLogged();
+    $scope.username = authData.getUsername();
 
     function getAds(page) {
         adsData.getAds(page)
@@ -12,21 +13,9 @@ app.controller('HomeController', ['$scope', 'adsData', function($scope, adsData)
     }
     getAds(1);
 
-
     $scope.setPage = function () {
         $scope.currentPage = this.page;
         getAds($scope.currentPage + 1);
     };
-
-    $scope.isAuthenticated = (function () {
-        return !!sessionStorage.access_token;
-    })();
-    if ($scope.isAuthenticated) {
-        $scope.username = JSON.parse(sessionStorage.access_token).username;
-    }
-    else {
-        $scope.username = 'guest';
-    }
-
 
 }]);

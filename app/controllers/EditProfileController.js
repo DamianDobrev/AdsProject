@@ -1,8 +1,8 @@
-app.controller('EditProfileController', ['$scope', 'userData', '$location', 'townsData', function($scope, userData, $location, townsData){
+app.controller('EditProfileController', ['$scope', 'userData', '$location', 'townsData', 'authData', function($scope, userData, $location, townsData, authData){
     $scope.pageTitle = 'Edit Profile';
-    $scope.isAuthenticated = (function () {
-        return !!sessionStorage.access_token;
-    })();
+    $scope.isAuthenticated = authData.isLogged();
+    $scope.username = authData.getUsername();
+
     townsData.getTowns()
         .$promise
         .then(function (data) {
@@ -16,12 +16,5 @@ app.controller('EditProfileController', ['$scope', 'userData', '$location', 'tow
     $scope.changePassword = function (password) {
         userData.changeUserPassword(password);
     };
-
-    if ($scope.isAuthenticated) {
-        $scope.username = JSON.parse(sessionStorage.access_token).username;
-    }
-    else {
-        $scope.username = 'guest';
-    }
 
 }]);

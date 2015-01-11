@@ -15,7 +15,16 @@ var Dom = (function () {
             type: type
         });
     }
+
+    function makeArray(number) {
+        var array = [];
+        for (var i = 0; i < number; i++) {
+            array[i] = i;
+        }
+        return array;
+    }
     return {
-        createNoty : newNoty
+        createNoty : newNoty,
+        makeArray : makeArray
     }
 })();

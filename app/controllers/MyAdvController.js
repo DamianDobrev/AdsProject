@@ -10,15 +10,21 @@ app.controller('MyAdvController', ['$scope', 'adsData', 'userData', '$location',
         $scope.username = 'guest';
     }
 
-    function initAds() {
+    function initAds(page) {
         $scope.ads = {};
-        adsData.getUserAds()
+        adsData.getUserAds(page)
             .$promise
             .then(function (data) {
                 $scope.ads = data;
+                $scope.numPages = Dom.makeArray(data.numPages);
             });
     }
-    initAds();
+    initAds(1);
+
+    $scope.setPage = function () {
+        $scope.currentPage = this.page;
+        initAds($scope.currentPage + 1);
+    };
 
     $scope.deleteAdv = function (ad) {
         adsData.deleteAdv(ad, initAds);

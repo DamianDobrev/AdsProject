@@ -7,8 +7,8 @@ app.factory('adsData', ['$resource', 'baseServiceUrl', 'userData', '$location', 
             .get();
     }
 
-    function setResource() {
-        resourceUserAds = $resource(baseServiceUrl + 'user/ads', {}, {
+    function setResource(page) {
+        resourceUserAds = $resource(baseServiceUrl + 'user/ads?pagesize=10&startpage=' + page, {}, {
             get: {
                 method : 'GET',
                 headers: userData.getHeaders()
@@ -20,8 +20,8 @@ app.factory('adsData', ['$resource', 'baseServiceUrl', 'userData', '$location', 
         });
     }
 
-    function getCurrentUserAds() {
-        setResource();
+    function getCurrentUserAds(page) {
+        setResource(page);
         return resourceUserAds.get();
     }
 

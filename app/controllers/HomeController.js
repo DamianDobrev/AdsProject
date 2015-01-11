@@ -7,23 +7,15 @@ app.controller('HomeController', ['$scope', 'adsData', function($scope, adsData)
             .$promise
             .then(function (data) {
                 $scope.ads = data;
-                $scope.numPages = makeArray(data.numPages);
+                $scope.numPages = Dom.makeArray(data.numPages);
             });
     }
     getAds(1);
 
 
-    function makeArray(number) {
-        var array = [];
-        for (var i = 0; i < number; i++) {
-            array[i] = i;
-        }
-        return array;
-    }
-
     $scope.setPage = function () {
         $scope.currentPage = this.page;
-        getAds($scope.currentPage+1);
+        getAds($scope.currentPage + 1);
     };
 
     $scope.isAuthenticated = (function () {

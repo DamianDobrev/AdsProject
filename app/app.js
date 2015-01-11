@@ -38,8 +38,8 @@ app.config(['$routeProvider', function ($routeProvider) {
         controller: 'EditProfileController',
         replace: true
     });
-//    $routeProvider.otherwise({
-//        redirectTo: '/',
-//        replace: true
-//    });
+    $routeProvider.otherwise({
+        redirectTo: '/',
+        replace: true
+    });
 }]);

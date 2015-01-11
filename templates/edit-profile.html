@@ -4,26 +4,47 @@
 
     <left-public-sidebar></left-public-sidebar>
 
-    <div id="mainContent" class="withRSContainer">
-        <section class="panel ad" ng-repeat="ad in ads.ads">
-            <h3 class="panelTitle adTitle"><span ng-bind="ad.title"></span><span class="dateInTitle">{{ ad.date | date}}</span></h3>
-            <aside>
-                <div class="imageHolder">
-                    <img ng-src="{{ad.imageDataUrl}}" />
-                </div>
-            </aside>
-            <article>
-                <span ng-bind="ad.text"></span>
-                <section class="sellerInfo">
-                    <span class="siLf">Name: </span> <span class="siRg" ng-bind="ad.ownerName">Damian Dobrev</span>
-                    <br>
-                    <span class="siLf">Email: </span> <span class="siRg" ng-bind="ad.ownerEmail">sexy@bea.st</span>
-                    <br>
-                    <span class="siLf">Tel: </span> <span class="siRg" ng-bind="ad.ownerPhone">69/420 420</span>
-                </section>
-            </article>
+    <div id="mainContent" class="withoutRSContainer panel">
+        <section class="editProfileCont editProfileCont1">
+            <h3 class="panelTitle">Edit Profile</h3>
+            <div class="blockElement lmBott">
+                <input type="text" id="name" class="textInput" ng-model="user.name">
+                <label for="name" class="siLf longTtl">Name</label>
+            </div>
+            <div class="blockElement lmBott">
+                <input type="email" id="email" class="textInput" ng-model="user.email">
+                <label for="email" class="siLf longTtl">Email</label>
+            </div>
+            <div class="blockElement lmBott">
+                <input type="text" id="phone" class="textInput" ng-model="user.phoneNumber">
+                <label for="phone" class="siLf longTtl">Phone</label>
+            </div>
+            <div class="blockElement lmBott">
+                <select class="textInput" id="inputTown" ng-model="user.town" ng-options="town.id as town.name for town in towns">
+                </select>
+                <label for="inputTown" class="siLf longTtl">Town</label>
+            </div>
+            <div class="blockElement submitMargin">
+                <button class="button" ng-click="editProfile(user)">Edit profile</button>
+            </div>
+        </section>
+        <section class="editProfileCont">
+            <h3 class="panelTitle">Change Password</h3>
+            <div class="blockElement lmBott">
+                <input type="password" id="oldPassword" class="textInput" ng-model="password.oldPassword">
+                <label for="oldPassword" class="siLf longTtl">Old Password</label>
+            </div>
+            <div class="blockElement lmBott">
+                <input type="password" id="newPassword" class="textInput" ng-model="password.newPassword">
+                <label for="newPassword" class="siLf longTtl">New Password</label>
+            </div>
+            <div class="blockElement lmBott">
+                <input type="password" id="confirmPassword" class="textInput" ng-model="password.confirmPassword">
+                <label for="confirmPassword" class="siLf longTtl">Confirm Password</label>
+            </div>
+            <div class="blockElement submitMargin">
+                <button class="button" ng-click="changePassword(password)">Change password</button>
+            </div>
         </section>
     </div>
-
-    <public-right-sidebar></public-right-sidebar>
 </div>

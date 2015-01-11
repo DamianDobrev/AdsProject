@@ -286,3 +286,11 @@ body {
     font-size: 12px;
     font-weight: 400;
 }
+
+.editProfileCont {
+    width: 330px !important;
+    float: left;
+}
+.editProfileCont1 {
+    margin: 0 30px 0 0;
+}

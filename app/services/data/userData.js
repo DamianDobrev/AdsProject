@@ -24,15 +24,12 @@ app.factory('userData', ['$resource', 'baseServiceUrl', '$location', function ($
             });
     }
     function logoutUser() {
-        var res = $resource(baseServiceUrl + 'user/logout', {}, {
+        $resource(baseServiceUrl + 'user/logout', {}, {
             post: {
                 method : 'POST',
                 headers: getHeaders()
             }
-        });
-        res.post();
-        sessionStorage.clear();
-        $location.path('/');
+        }).post();
     }
 
     function getHeaders() {
@@ -44,10 +41,40 @@ app.factory('userData', ['$resource', 'baseServiceUrl', '$location', function ($
         return headers;
     }
 
+    function changeUserProfile(user) {
+        console.log(user);
+        $resource(baseServiceUrl + 'user/profile', {}, {
+            put: {
+                method : 'PUT',
+                headers : getHeaders()
+            }
+        }).put(user)
+            .$promise
+            .then(function (success) {
+                Dom.createNoty('success', success.message);
+            });
+    }
+
+    function changeUserPassword(password) {
+        console.log(password);
+        $resource(baseServiceUrl + 'user/ChangePassword', {}, {
+            put: {
+                method : 'PUT',
+                headers : getHeaders()
+            }
+        }).put(password)
+            .$promise
+            .then(function (success) {
+                Dom.createNoty('success', success.message);
+            });
+    }
+
     return {
         register : registerUser,
         login : loginUser,
         logout : logoutUser,
-        getHeaders : getHeaders
+        getHeaders : getHeaders,
+        changeUserProfile : changeUserProfile,
+        changeUserPassword : changeUserPassword
     }
 }]);

@@ -28,12 +28,12 @@ app.factory('adsData', ['$resource', 'baseServiceUrl', 'userData', '$location', 
         setResource();
         resourceUserAds.post(data)
             .$promise
-            .then(function (dat) {
-                Dom.createNoty('success', dat.message);
+            .then(function (success) {
+                Dom.createNoty('success', success.message);
                 $location.path('/myAdvs');
             },
             function (error) {
-                Dom.createNoty('error', error.message)
+                Dom.createNoty('error', error.data.message)
             });
     }
 

@@ -11,8 +11,6 @@ app.controller('EditAdvController', ['$scope', 'adsData', 'userData', '$location
         .$promise
         .then(function (data) {
             $scope.ad = data;
-        }, function (error) {
-            console.log('error')
         });
 
     $scope.editAdv = function (data) {

@@ -39,32 +39,29 @@ app.factory('adsData', ['$resource', 'baseServiceUrl', 'userData', '$location', 
     }
 
     function editAdv(ad, data) {
-        var resource = $resource(baseServiceUrl + 'user/ads/' + ad.id, {}, {
+        $resource(baseServiceUrl + 'user/ads/' + ad.id, {}, {
             editAdv: {
                 method : 'PUT',
                 headers: userData.getHeaders()
             }
-        });
-        resource.editAdv(data)
+        }).editAdv(data)
             .$promise
             .then(function (success) {
                 Dom.createNoty('success', success.message);
                 $location.path('/myAdvs');
             },
             function (error) {
-                console.log(error)
                 Dom.createNoty('error', error.data.message);
             });
     }
 
     function deleteAdv(ad, initAds) {
-        var resource = $resource(baseServiceUrl + 'user/ads/' + ad.id, {}, {
+        $resource(baseServiceUrl + 'user/ads/' + ad.id, {}, {
             deleteAdv: {
                 method : 'DELETE',
                 headers: userData.getHeaders()
             }
-        });
-        resource.deleteAdv()
+        }).deleteAdv()
             .$promise
             .then(function () {
                 Dom.createNoty('success', 'Ad deleted successfully');

@@ -29,7 +29,13 @@ app.factory('userData', ['$resource', 'baseServiceUrl', '$location', function ($
                 method : 'POST',
                 headers: getHeaders()
             }
-        }).post();
+        }).post()
+            .$promise
+            .then(function (success) {
+                sessionStorage.clear();
+                $location.path('/home');
+                Dom.createNoty('success', 'Congrats, you logged out successfully!')
+            });
     }
 
     function getHeaders() {

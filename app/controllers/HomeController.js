@@ -3,6 +3,7 @@ app.controller('HomeController', ['$scope', 'adsData', 'authData', function($sco
     $scope.isAuthenticated = authData.isLogged();
     $scope.username = authData.getUsername();
 
+
     function getAds(page) {
         adsData.getAds(page)
             .$promise

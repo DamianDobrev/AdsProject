@@ -2,8 +2,9 @@ app.factory('adsData', ['$resource', 'baseServiceUrl', 'userData', '$location', 
     var resourceAllAds = $resource(baseServiceUrl + 'ads');
     var resourceUserAds;
 
-    function getAllAds() {
-        return resourceAllAds.get();
+    function getAllAds(pageId) {
+        return $resource(baseServiceUrl + 'ads?pagesize=10&startpage=' + pageId)
+            .get();
     }
 
     function setResource() {

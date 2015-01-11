@@ -5,6 +5,15 @@
     <left-public-sidebar></left-public-sidebar>
 
     <div id="mainContent" class="withRSContainer">
+        <section class="panel paging">
+            <ul>
+                <li ng-repeat="page in numPages"
+                    ng-class="{active: page == currentPage}"
+                    ng-click="setPage()">
+                    <a href ng-bind="page + 1"></a>
+                </li>
+            </ul>
+        </section>
         <section class="panel ad" ng-repeat="ad in ads.ads">
             <h3 class="panelTitle adTitle"><span ng-bind="ad.title"></span><span class="dateInTitle">{{ ad.date | date}}</span></h3>
             <aside>
